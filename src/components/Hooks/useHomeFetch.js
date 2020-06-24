@@ -19,8 +19,8 @@ export const useHomeFetch = () => {
 
       setState((prev) => ({
         ...prev,
-        movies: isLoadMore !== -1 ? [...prev.movies, ...result.parts] : [...result.parts],
-        heroImage: prev.heroImage || result,
+        movies: isLoadMore !== -1 ? [...prev.movies, ...result.results] : [...result.results],
+        heroImage: prev.heroImage || result.results[0],
         currentPage: result.page,
         totalPages: result.total_pages,
       }));
@@ -56,7 +56,7 @@ export const useHomeFetch = () => {
   }; */
 
   useEffect(() => {
-    fetchMovies(`${API_URL}collection/10?api_key=${API_KEY}`);
+    fetchMovies(POPULAR_BASE_URL);
     /* fetchFilmData(`${API_URL2}films`); */
   }, []);
 

@@ -48,8 +48,6 @@ function Home() {
     fetchMovies(endpoint);
   };
 
-  console.log(filmData);
-
   if (error) return <div>I have a bad feeling about this... </div>;
   if (!movies[0]) return <Spinner />; /* && !filmData */
   return (
