@@ -11,7 +11,6 @@ import { useMovieFetch } from './Hooks/useMovieFetch';
 
 function Movie({ movieId }) {
   const [movie, loading, error] = useMovieFetch(movieId);
-  console.log(movie);
 
   if (error) return <div>I have a bad feeling about this...</div>;
   if (loading) return <Spinner />;
