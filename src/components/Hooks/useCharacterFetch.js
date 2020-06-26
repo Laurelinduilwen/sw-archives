@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { API_URL, API_KEY, SEARCH_BASE_URL } from '../../config';
+import { SEARCH_BASE_URL } from '../../config';
 
 export const useCharacterFetch = () => {
   const [state, setState] = useState({ filteredCharacters: [] });

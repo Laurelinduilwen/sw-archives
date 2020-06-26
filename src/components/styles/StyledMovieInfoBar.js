@@ -42,10 +42,15 @@ export const StyledMovieInfoBar = styled.div`
     margin-top: -3px;
   }
 
+  .fa-toggle {
+    float: left;
+    margin-top: -3px;
+  }
   @media screen and (max-width: 768px) {
     .fa-time,
     .fa-revenue,
-    .fa-budget {
+    .fa-budget,
+    .fa-toggle {
       display: none;
     }
   }

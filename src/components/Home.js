@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from '../config';
 
 import HeroImage from './elements/HeroImage';
@@ -17,7 +17,6 @@ function Home() {
       loading,
       error,
     },
-    fetchMovies,
   ] = useHomeFetch();
 
   if (error) return <div>I have a bad feeling about this... </div>;

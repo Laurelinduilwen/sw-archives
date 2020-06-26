@@ -28,6 +28,8 @@ function Movie({ movieId, characters, films }) {
 
   const [searchTerm, setSearchTerm] = useState('');
 
+  const [crawl, setCrawl] = useState(false);
+
   const film = films.filter(function (obj) {
     return obj.episode_id === movie.episode_id;
   })[0];
@@ -57,8 +59,13 @@ function Movie({ movieId, characters, films }) {
       <Navigation movie={!searchTerm ? movie.original_title : 'Searching Characters...'} />
       {!searchTerm && (
         <>
-          <MovieInfo movie={movie} />
-          <MovieInfoBar time={movie.runtime} budget={movie.budget} revenue={movie.revenue} />
+          {crawl === false ? <MovieInfo movie={movie} /> : <p> CRAWL PLACEHOLDER</p>}
+          <MovieInfoBar
+            time={movie.runtime}
+            budget={movie.budget}
+            revenue={movie.revenue}
+            toggle={() => (!crawl ? setCrawl(true) : setCrawl(false))}
+          />
         </>
       )}
 
@@ -76,16 +83,6 @@ function Movie({ movieId, characters, films }) {
           </h3>
         )}
       </Grid>
-      {/* <Grid header="Actors">
-        {movie.actors.map((actor) => (
-          <Actor
-            key={actor.credit_id}
-            actor={actor}
-            clickable
-            onClick={() => console.log('worked')}
-          />
-        ))}
-      </Grid> */}
     </>
   );
 }

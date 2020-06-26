@@ -4,7 +4,7 @@ import { calcTime, convertMoney } from '../../helpers';
 
 import { StyledMovieInfoBar } from '../styles/StyledMovieInfoBar';
 
-function MovieInfoBar({ time, budget, revenue }) {
+function MovieInfoBar({ time, budget, revenue, toggle }) {
   return (
     <StyledMovieInfoBar>
       <div className="movieinfobar-content">
@@ -20,7 +20,16 @@ function MovieInfoBar({ time, budget, revenue }) {
 
         <div className="movieinfobar-content-col">
           <FontAwesome className="fa-revenue" name="ticket" size="2x" />
-          <span className="movieinfobar-info">Revenue: {convertMoney(revenue)}</span>
+          <span className="movieinfobar-info" onClick={toggle}>
+            Revenue: {convertMoney(revenue)}
+          </span>
+        </div>
+
+        <div className="movieinfobar-content-col">
+          <FontAwesome className="fa-toggle" name="toggle" size="2x" />
+          <span className="movieinfobar-info" onClick={toggle}>
+            Toggle Crawl
+          </span>
         </div>
       </div>
     </StyledMovieInfoBar>
