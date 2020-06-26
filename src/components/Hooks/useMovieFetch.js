@@ -13,16 +13,30 @@ export const useMovieFetch = (movieId) => {
     try {
       const endpoint = `${API_URL}movie/${movieId}?api_key=${API_KEY}`;
       const result = await (await fetch(endpoint)).json();
-      // console.log(result);
-
       const creditsEndpoint = `${API_URL}movie/${movieId}/credits?api_key=${API_KEY}`;
       const creditsResult = await (await fetch(creditsEndpoint)).json();
       const directors = creditsResult.crew.filter((member) => member.job === 'Director');
-      // console.log(creditsResult);
+
+      /* What we are doing is we are assigning an episode id that will match the film data we are getting from two different sources. 
+      The SWAPI only includes 6 movies out of 9 so we are returning an episode id of none for those not included  */
 
       setState({
         ...result,
         actors: creditsResult.cast,
+        episode_id:
+          result.id === 11
+            ? 4
+            : result.id === 1891
+            ? 5
+            : result.id === 1892
+            ? 6
+            : result.id === 1893
+            ? 1
+            : result.id === 1894
+            ? 2
+            : result.id === 1895
+            ? 3
+            : 'none',
         directors,
       });
     } catch (error) {

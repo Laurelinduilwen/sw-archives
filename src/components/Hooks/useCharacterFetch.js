@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
-import { API_URL, API_KEY } from '../../config';
+import { API_URL, API_KEY, SEARCH_BASE_URL } from '../../config';
 
-export const useHomeFetch = () => {
-  const [state, setState] = useState({ movies: [] });
+export const useCharacterFetch = () => {
+  const [state, setState] = useState({ filteredCharacters: [] });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
-  const fetchMovies = async (endpoint) => {
+  const fetchCharacter = async (endpoint) => {
     setError(false);
     setLoading(true);
 
@@ -15,10 +15,7 @@ export const useHomeFetch = () => {
 
       setState((prev) => ({
         ...prev,
-        movies: [...result.parts],
-        heroImage: prev.heroImage || result,
-        currentPage: result.page,
-        totalPages: result.total_pages,
+        filteredCharacters: [...result.results],
       }));
     } catch (error) {
       setError(true);
@@ -29,8 +26,8 @@ export const useHomeFetch = () => {
   };
 
   useEffect(() => {
-    fetchMovies(`${API_URL}collection/10?api_key=${API_KEY}`);
+    fetchCharacter(SEARCH_BASE_URL);
   }, []);
 
-  return [{ state, loading, error }, fetchMovies];
+  return [{ state, loading, error }, fetchCharacter];
 };
