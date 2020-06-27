@@ -46,6 +46,7 @@ export const StyledMovieInfoBar = styled.div`
   .fa-toggle {
     float: left;
     margin-top: -3px;
+    cursor: pointer;
   }
   @media screen and (max-width: 768px) {
     .fa-time,
