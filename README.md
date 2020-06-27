@@ -6,6 +6,8 @@ perhaps the archives are complete?
 
 a small application built with react using the star wars api that this young padawan is doing for an assignment
 
+can be accessed from https://sw-archives.netlify.app/
+
 just _"\$npm i"_ than _"\$npm run start"_ and enjoy!
 
 this is where the fun begins~
