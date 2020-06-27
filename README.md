@@ -11,7 +11,6 @@ just _"\$npm i"_ than _"\$npm run start"_ and enjoy!
 this is where the fun begins~
 
 **version 0.1:**
-Hello there!
 this is highly in progress, the final project will use 2 different APIs because I use to be a huge star wars fan and I want to do it properly.
 
 Lots of open ends and senseless things are included in this version (like the searchbar which doesnt work yet and the movie component for detailed info when you click on it) but
@@ -24,7 +23,7 @@ and covers most stuff about character, planets and starships
 
 the SWAPI also does not include the last 3 movies which is not really a bummer considering they are terrible and snuffed out all passion and love I had for the series but again for the sake of completion...
 
-version 0.2:
+**version 0.2:**
 
 oh ho! that was a bit fast but the application is now complete with a proper redux store, it is hitting nearly all endpoints in SWAPI and storing everything like a greedy java.
 also did the movie crawl, just click toggle to see it when you are on movie page :3
