@@ -2,7 +2,7 @@ import { API_URL2 } from '../../../config';
 export const SET_PLANETS = 'SET_PLANETS';
 
 const urls = [
-  `${API_URL2}planets`,
+  `${API_URL2}planets/?page=1`,
   `${API_URL2}planets/?page=2`,
   `${API_URL2}planets/?page=3`,
   `${API_URL2}planets/?page=4`,

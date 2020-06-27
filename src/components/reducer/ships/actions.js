@@ -2,7 +2,7 @@ import { API_URL2 } from '../../../config';
 export const SET_STARSHIPS = 'SET_STARSHIPS';
 
 const urls = [
-  `${API_URL2}starships`,
+  `${API_URL2}starships/?page=1`,
   `${API_URL2}starships/?page=2`,
   `${API_URL2}starships/?page=3`,
   `${API_URL2}starships/?page=4`,

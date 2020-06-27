@@ -2,7 +2,7 @@ import { API_URL2 } from '../../../config';
 export const SET_CHARACTERS = 'SET_CHARACTERS';
 
 const urls = [
-  `${API_URL2}people`,
+  `${API_URL2}people/?page=1`,
   `${API_URL2}people/?page=2`,
   `${API_URL2}people/?page=3`,
   `${API_URL2}people/?page=4`,

@@ -3,15 +3,6 @@ export const SET_FILMS = 'SET_FILMS';
 
 const urls = [`${API_URL2}films/`];
 
-/* 
-export function getCharacters() {
-  return (dispatch) =>
-    fetch(`${API_URL2}people`)
-      .then((res) => res.json())
-      .then((res) => res.results)
-      .then((characters) => dispatch(setCharacters(characters)));
-} */
-
 export function getFilms() {
   return (dispatch) =>
     Promise.all(
