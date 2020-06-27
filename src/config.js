@@ -4,7 +4,7 @@
 
 const API_URL = 'https://api.themoviedb.org/3/';
 const API_URL2 = 'https://swapi.dev/api/';
-const API_KEY = '844dba0bfd8f3a4f3799f6130ef9e335';
+const API_KEY = '8b88de351854b5d14d5282f040bef082';
 
 const SEARCH_BASE_URL = `https://swapi.dev/api/people/?search=`;
 const POPULAR_BASE_URL = `${API_URL}movie/popular?api_key=${API_KEY}`;
