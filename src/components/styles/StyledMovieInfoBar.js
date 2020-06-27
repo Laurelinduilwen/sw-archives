@@ -15,6 +15,7 @@ export const StyledMovieInfoBar = styled.div`
   .movieinfobar-content {
     max-width: 1280px;
     width: 100%;
+    display: flex;
     margin: 0 auto;
     color: #fff;
   }

@@ -67,8 +67,8 @@ export const StyledProfileCard = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 35px;
-    height: 35px;
+    width: 67px;
+    height: 30px;
     background: #fff;
     color: #000;
     font-weight: 800;

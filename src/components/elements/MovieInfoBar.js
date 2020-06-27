@@ -20,13 +20,11 @@ function MovieInfoBar({ time, budget, revenue, toggle }) {
 
         <div className="movieinfobar-content-col">
           <FontAwesome className="fa-revenue" name="ticket" size="2x" />
-          <span className="movieinfobar-info" onClick={toggle}>
-            Revenue: {convertMoney(revenue)}
-          </span>
+          <span className="movieinfobar-info">Revenue: {convertMoney(revenue)}</span>
         </div>
 
         <div className="movieinfobar-content-col">
-          <FontAwesome className="fa-toggle" name="toggle" size="2x" />
+          <FontAwesome className="fa-toggle" name="film" size="2x" />
           <span className="movieinfobar-info" onClick={toggle}>
             Toggle Crawl
           </span>

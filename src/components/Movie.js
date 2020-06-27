@@ -7,6 +7,7 @@ import Actor from './elements/Actor';
 import Grid from './elements/Grid';
 import SearchBar from './elements/SearchBar';
 import Spinner from './elements/Spinner';
+import Crawl from './elements/Crawl';
 import { useMovieFetch } from './Hooks/useMovieFetch';
 import { useCharacterFetch } from './Hooks/useCharacterFetch';
 import { SEARCH_BASE_URL } from '../config';
@@ -50,16 +51,47 @@ function Movie({ movieId, characters, films }) {
 
   if (!filmCharacters) return <Spinner />;
 
-  console.log(film);
-  console.log(filmCharacters);
-  console.log(filteredCharacters);
+  function convertToRoman(num) {
+    var roman = {
+      M: 1000,
+      CM: 900,
+      D: 500,
+      CD: 400,
+      C: 100,
+      XC: 90,
+      L: 50,
+      XL: 40,
+      X: 10,
+      IX: 9,
+      V: 5,
+      IV: 4,
+      I: 1,
+    };
+    var str = '';
+
+    for (let i of Object.keys(roman)) {
+      const q = Math.floor(num / roman[i]);
+      num -= q * roman[i];
+      str += i.repeat(q);
+    }
+
+    return str;
+  }
 
   return (
     <>
       <Navigation movie={!searchTerm ? movie.original_title : 'Searching Characters...'} />
       {!searchTerm && (
         <>
-          {crawl === false ? <MovieInfo movie={movie} /> : <p> CRAWL PLACEHOLDER</p>}
+          {crawl === false ? (
+            <MovieInfo movie={movie} />
+          ) : (
+            <Crawl
+              title={`EPISODE ${convertToRoman(film.episode_id)}`}
+              subTitle={film.title}
+              text={film.opening_crawl}
+            ></Crawl>
+          )}
           <MovieInfoBar
             time={movie.runtime}
             budget={movie.budget}

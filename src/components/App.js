@@ -9,6 +9,7 @@ import { getCharacters } from './reducer/characters/actions';
 import { getFilms } from './reducer/films/actions';
 import { getStarships } from './reducer/ships/actions';
 import { getVehicles } from './reducer/vehicles/actions';
+import { getPlanets } from './reducer/planets/actions';
 import Movie from './Movie';
 import Character from './Character';
 import NotFound from './NotFound';
@@ -21,6 +22,7 @@ store.dispatch(getCharacters());
 store.dispatch(getFilms());
 store.dispatch(getStarships());
 store.dispatch(getVehicles());
+store.dispatch(getPlanets());
 
 console.log(store);
 

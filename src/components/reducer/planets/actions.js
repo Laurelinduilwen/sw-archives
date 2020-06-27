@@ -1,18 +1,16 @@
 import { API_URL2 } from '../../../config';
-export const SET_CHARACTERS = 'SET_CHARACTERS';
+export const SET_PLANETS = 'SET_PLANETS';
 
-const urls = [`${API_URL2}people`, `${API_URL2}people/?page=2`, `${API_URL2}people/?page=3`];
+const urls = [
+  `${API_URL2}planets`,
+  `${API_URL2}planets/?page=2`,
+  `${API_URL2}planets/?page=3`,
+  `${API_URL2}planets/?page=4`,
+  `${API_URL2}planets/?page=5`,
+  `${API_URL2}planets/?page=6`,
+];
 
-/* 
-export function getCharacters() {
-  return (dispatch) =>
-    fetch(`${API_URL2}people`)
-      .then((res) => res.json())
-      .then((res) => res.results)
-      .then((characters) => dispatch(setCharacters(characters)));
-} */
-
-export function getCharacters() {
+export function getPlanets() {
   return (dispatch) =>
     Promise.all(
       urls.map((url) =>
@@ -20,12 +18,12 @@ export function getCharacters() {
           .then((res) => res.json())
           .then((res) => res.results),
       ),
-    ).then((characters) => dispatch(setCharacters([].concat(...characters))));
+    ).then((planets) => dispatch(setPlanets([].concat(...planets))));
 }
 
-export function setCharacters(characters) {
+export function setPlanets(planets) {
   return {
-    type: SET_CHARACTERS,
-    characters,
+    type: SET_PLANETS,
+    planets,
   };
 }

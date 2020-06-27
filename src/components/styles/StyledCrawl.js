@@ -1,0 +1,16 @@
+import styled from 'styled-components';
+
+export const StyledCrawl = styled.div`
+  @keyframes crawl {
+    0% {
+      top: 0;
+      transform: rotateX(20deg) translateZ(0);
+    }
+    100% {
+      top: -6000px;
+      transform: rotateX(25deg) translateZ(-2500px);
+    }
+  }
+`;
+
+export default StyledCrawl;

@@ -5,6 +5,7 @@ const urls = [
   `${API_URL2}starships`,
   `${API_URL2}starships/?page=2`,
   `${API_URL2}starships/?page=3`,
+  `${API_URL2}starships/?page=4`,
 ];
 
 export function getStarships() {
