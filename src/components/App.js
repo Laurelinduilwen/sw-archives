@@ -24,8 +24,6 @@ store.dispatch(getStarships());
 store.dispatch(getVehicles());
 store.dispatch(getPlanets());
 
-console.log(store);
-
 function App() {
   return (
     <Provider store={store}>
